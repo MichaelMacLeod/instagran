@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
       # @posts = Post.all
-    end
+  end
 
     def show
     end
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
     def edit
     end
-
+end
     # def create
     #   @post = Post.new(post_params)
     # end
@@ -35,5 +35,3 @@ class PostsController < ApplicationController
     # def post_params
     #   params.require(:post).permit(:name, :post_image)
     # end
-
-  end
