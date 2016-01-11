@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'carrierwave'
 gem 'rmagick', '2.13.2', :require => 'RMagick'
-
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
