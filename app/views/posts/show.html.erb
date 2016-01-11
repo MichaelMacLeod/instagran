@@ -1,6 +1,8 @@
 <p>
-  <strong>Name:</strong>
-  <%= @post.name %>
+  <% @post.each do |post| %>
+
+  <strong>Caption:</strong>
+  <%= post.caption %>
 </p>
 <p>
   <b>Image:</b>

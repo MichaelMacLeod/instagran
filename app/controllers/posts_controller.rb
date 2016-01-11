@@ -3,35 +3,40 @@ class PostsController < ApplicationController
 
 
   def index
-      # @posts = Post.all
+    @posts = Post.all
   end
 
-    def show
+  def show
+  end
+
+  def new 
+    @post = Post.new
+  end
+
+  def edit
+  end
+
+  def create
+    @post = Post.new(post_params)
+    @post.save
+    redirect_to( posts_path )
+    # post_params = params[:post]
+    # Post.create(post_params)
+  end
+
+    def update
     end
 
-    def new 
-      @post = Post.new
+    def destroy
     end
 
-    def edit
-    end
-end
-    def create
-      @post = Post.new(post_params)
-    end
-
-    # def update
-    # end
-
-    # def destroy
-    # end
-
-    # private
+    private
 
     # def set_post
     #   @post = Post.find(params[:id])
     # end
 
-    # def post_params
-    #   params.require(:post).permit(:name, :post_image)
-    # end
+    def post_params
+      params.require(:post).permit(:caption, :post_image)
+    end
+    end
