@@ -16,9 +16,9 @@ class PostsController < ApplicationController
     def edit
     end
 end
-    # def create
-    #   @post = Post.new(post_params)
-    # end
+    def create
+      @post = Post.new(post_params)
+    end
 
     # def update
     # end
