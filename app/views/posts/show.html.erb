@@ -1,14 +1,12 @@
 <p>
-  <% post.each do |post| %>
 
   <strong>Caption:</strong>
-  <%= post.caption %>
+  <%= @post.caption %>
 </p>
 <p>
   <b>Image:</b>
-  <%= link_to image_tag(post.post_image.thumb.url), post.post_image.medium.url %>
+  <%= link_to image_tag(@post.post_image.thumb.url), post_path(@post) %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(post) %> |
+<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %><br>
-<% end %>

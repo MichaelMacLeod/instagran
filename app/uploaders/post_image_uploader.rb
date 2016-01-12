@@ -15,7 +15,7 @@ class PostImageUploader < CarrierWave::Uploader::Base
   end
 
   version :medium do 
-    process :resize_to_fit => [400,400]
+    process :resize_to_fit => [460,460]
   end
 
   # Override the directory where uploaded files will be stored.
