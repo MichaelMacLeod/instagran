@@ -11,13 +11,11 @@ class FriendshipsController < ApplicationController
     end
   end
 
+#current.user.friendships.find - means the current user can only see their friendships and only destroy their own friendships. Now it's impossible to destroy other friendships. 
   def destroy
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
     flash[:notice] = "Removed friendship."
     redirect_to current_user
   end
-
-
-
 end

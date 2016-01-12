@@ -2,11 +2,24 @@
 
 <p>Username: <%=@user.username %>
 
-<h2>Pals</h2>
-<ul>
-<% for user in @user.friends %>
-<li><%= user.username %></li>
-<% end %> 
-</ul>
+  <h2>Pals</h2>
+  <ul>
+    <% for friendship in @user.friendships %>
+    <li>
+      <%= friendship.friend.username %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
 
-<p><%= link_to "Find Pals", users_path %></p>
+    <% end %> 
+  </ul>
+
+  <p><%= link_to "Find Pals", users_path %></p>
+
+<!-- You might not want to friend people back, so... -->
+
+  <h2>Folk who have friended you</h2>
+  <ul>
+    <% for user in @user.inverse_friends %>
+      <li><%= user.username %></li>
+    <% end %> 
+  </ul>
