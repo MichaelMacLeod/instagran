@@ -1,22 +1,22 @@
 <h1>All Posts</h1>
 
-<%= link_to 'New Post', new_post_path %>
 
 <p>
   <% @posts.each do |post| %>
-
-  <strong>Caption:</strong>
-  <%= post.caption %>
-</p>
-<p>
   <b>Image:</b>
   <%= link_to image_tag(post.post_image.medium.url), post_path(post) %>
+</p>
+
+<p>
+<strong>Caption:</strong>
+<%= post.caption %>
 </p>
 
 <br>
 
 <%= button_to 'Delete Post', post_path(post), method: :delete, data: { confirm: 'Sure?' } %>
 <%= link_to 'Edit post', edit_post_path(post) %> 
+<br>
 <br>
 <br>
 
