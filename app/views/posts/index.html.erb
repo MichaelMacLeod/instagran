@@ -3,7 +3,7 @@
 
 <p>
   <% @posts.each do |post| %>
-  <b>Image:</b>
+  <b>Image:</b><br>
   <%= link_to image_tag(post.post_image.medium.url), post_path(post) %>
 </p>
 
@@ -14,10 +14,9 @@
 
 <br>
 
-<%= button_to 'Delete Post', post_path(post), method: :delete, data: { confirm: 'Sure?' } %>
-<%= link_to 'Edit post', edit_post_path(post) %> 
-<br>
-<br>
-<br>
+<%= button_to 'Delete Post', post_path(post), method: :delete, data: { confirm: 'Sure?' } %> <br>
+<%= link_to 'Edit', edit_post_path(post) %> 
+<br><br><br><br>
+
 
 <% end %>

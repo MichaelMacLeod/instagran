@@ -1,11 +1,12 @@
 <p>
 
-  <strong>Caption:</strong>
-  <%= @post.caption %>
 </p>
+<b>Here is your image:</b><br>
+<%= link_to image_tag(@post.post_image.medium.url), post_path(@post) %>
 <p>
-  <b>Image:</b>
-  <%= link_to image_tag(@post.post_image.thumb.url), post_path(@post) %>
+<strong>Caption:</strong>
+<%= @post.caption %>
+
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
