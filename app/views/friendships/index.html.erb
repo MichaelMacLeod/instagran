@@ -4,7 +4,7 @@ User: <%= current_user.email %>
 <ul>
   <% current_user.friendships.each do |friendship| %>
   <li>
-    <%= link_to friendship.friend.email, user_posts_path(friendship.friend) %>
+    <%= link_to friendship.friend.username, user_posts_path(friendship.friend) %>
     (<%= link_to "remove", friendship, :method => :delete %>)
   </li>
   <% end %> 

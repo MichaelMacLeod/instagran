@@ -6,8 +6,10 @@ class PostsController < ApplicationController
     if params[:user_id]
       @user = User.find(params[:user_id])
       @posts = @user.posts
+      @display_name = "#{@user.username}'s"
     else
       @posts = Post.all
+      @display_name = "All"
     end
   end
 
