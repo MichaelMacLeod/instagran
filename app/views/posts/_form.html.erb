@@ -1,17 +1,19 @@
 <%= form_for @post do |f| %>
 
+<div class="field"><br>
+  <% f.label :post_image %>
+  <%= f.file_field :post_image %>
+</div>
+<br><br>
 <div class="field">
-  <%= f.label :caption %><br>
+  <% f.label :caption %>Tell us something about this photo:<br>
   <%= f.text_field :caption %>
 </div>
 <br>
-<div class="field">
-  <%= f.label :post_image %>
-  <%= f.file_field :post_image %>
-</div>
-<br>
+
 
 <div class="actions">
-  <%= f.submit 'Save!' %>
+  <%= f.submit 'Save!' %><br><br>
+
 </div>
 <% end %>

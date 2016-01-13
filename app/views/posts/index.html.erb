@@ -2,7 +2,7 @@
 
 <p>
   <% @posts.each do |post| %>
-  <b>Image:</b><br>
+  <br>
   <%= link_to image_tag(post.post_image.medium.url), post_path(post) %>
 </p>
 
@@ -13,7 +13,7 @@
 
 <br>
 
-<% if post.user.id == current_user.id %>
+<% if post.user == current_user %>
 <%= button_to 'Delete Post', post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %> 
 
 <br>
