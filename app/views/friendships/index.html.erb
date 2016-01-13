@@ -1,0 +1,25 @@
+
+User: <%= current_user.email %>
+
+<h2>Pals</h2>
+<ul>
+  <% current_user.friendships.each do |friendship| %>
+  <li>
+    <%= link_to friendship.friend.email, user_posts_path(friendship.friend) %>
+    (<%= link_to "remove", friendship, :method => :delete %>)
+  </li>
+  <% end %> 
+</ul>
+
+<!-- You might not want to friend people back, so... -->
+
+<%= link_to "Add pal", new_friendship_path %>
+
+
+<h2>Folk who have friended you</h2>
+<ul>
+  <% current_user.inverse_friends.each do |user| %>
+  <li><%= link_to user.email, user_posts_path(user) %></li>
+  <% end %> 
+</ul>
+
