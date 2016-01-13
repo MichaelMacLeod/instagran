@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :posts
+  resources :friendships
+
   get '/posts', to: 'index#posts'
 
   root 'posts#index'
