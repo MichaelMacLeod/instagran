@@ -1,9 +1,11 @@
+<h2>Here's your family. <br> Pick who you want to follow:</h2><br>
+
 <div id="users">
   <% for user in @users %>
   <div class="user">
     <p>
-      <strong><%= user.email %></strong>
-      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <strong><%= user.username %></strong>
+      <%= link_to "Click here to follow", friendships_path(:friend_id => user), :method => :post %>
       <div class="clear"></div>
     </p>
   </div>
