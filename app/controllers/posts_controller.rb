@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     end
   end
 
+#Having issues with this:
   def show
     @post = Post.find(params[:id])
     @user = User.find(params[:id])

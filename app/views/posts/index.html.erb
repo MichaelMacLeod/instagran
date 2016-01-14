@@ -8,8 +8,9 @@
   <%= link_to image_tag(post.post_image.medium.url), post_path(post) %>
 </p>
 
+<!-- <<<<<<< Having an issue with this: >>>>> -->
 <p>
-  <strong> <%=current_user.username%>:</strong>
+  <strong> <%= post.username %>:</strong>
   <%= post.caption %>
 </p>
 
