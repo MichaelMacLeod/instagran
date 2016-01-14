@@ -10,7 +10,7 @@
 
 <!-- <<<<<<< Having an issue with this: >>>>> -->
 <p>
-  <strong> <%= post.username %>:</strong>
+  <strong> Caption:</strong>
   <%= post.caption %>
 </p>
 
@@ -18,9 +18,10 @@
 
 <% if post.user == current_user %>
 <%= button_to 'Delete Post', post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %> 
-
+<% end %>
 <br>
 
+<% if post.user == current_user %>
 <%= link_to 'Edit', edit_post_path(post) %> 
 <br>
 
